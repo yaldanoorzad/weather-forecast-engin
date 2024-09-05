@@ -1,0 +1,101 @@
+body {
+    font-family: "Nunito", sans-serif;
+    color: white;
+}
+.container {
+    background-color: gray;
+    max-width: 800px;
+    margin: 45px auto;
+    padding: 20px;
+    border-radius: 20px;
+    border-width: 2px;
+    text-align: right;
+    margin-top: 80px;
+}
+.weather-forecast {
+    display: flex;
+    justify-content: right;
+    margin-top: 30px;
+}
+.weather-forecast-day {
+    margin-right: 7px;
+    margin-left: 7px;
+}
+.weather-forecast-day:hover {
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+}
+.weather-forecast-date {
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+.weather-forecast-icon {
+    font-size: 48px;
+    text-align: center;
+}
+.weather-forecast-temperatures {
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.weather-forecast-temperature {
+    padding: 0 10px;
+}
+#discription .country, .humidity, .wind, .coordinates, .feels {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0;
+    
+}
+#discription {
+    max-width: 500px;
+    display: block;
+    margin: 20px 20px 20px 320px;
+    
+}
+footer {
+    margin-right: 25px;
+    font-size: 14px;
+}
+.weather-forecast-search {
+    display: flex;
+    margin: 10px 20px 20px 340px;
+}
+.weather-forecast-search-place {
+    height: 40px;
+    background-color: white;
+    border-radius: 35px;
+    width: 300px;
+    padding-left: 20px;
+    border-color: white;
+}
+.weather-forecast-search-btn {
+    height: 40px;
+    background-color: white;
+    border-radius: 35px;
+    width: 80px;
+    padding: 10px;
+    border-color: white;
+    margin: 0 0 0 10px;
+}
+.secondcontainer {
+    display: block;
+    position: fixed;
+    margin: 0 auto;
+    background-color: antiquewhite;
+    width: 380px;
+    border-radius: 30px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    top: 68px;
+    left: 275px;
+    font-size: 33px;
+}
+#current-temperature, #current-city {
+    font-size: 38px;
+}
