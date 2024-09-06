@@ -1,21 +1,29 @@
 body {
+    background-image: url("https://images.pexels.com/photos/209831/pexels-photo-209831.jpeg?cs=srgb&dl=pexels-pixabay-209831.jpg&fm=jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     font-family: "Nunito", sans-serif;
     color: white;
+    height: 85vh;
+    
 }
 .container {
-    background-color: gray;
+    background-color: rgba(0,0,0,0.1);
     max-width: 800px;
     margin: 45px auto;
     padding: 20px;
     border-radius: 20px;
-    border-width: 2px;
+    border: solid 2px #ffff;
     text-align: right;
     margin-top: 80px;
 }
 .weather-forecast {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
     display: flex;
     justify-content: right;
-    margin-top: 30px;
+    margin: 20px 20px 20px 280px;
+    width: max-content;
 }
 .weather-forecast-day {
     margin-right: 7px;
@@ -52,10 +60,12 @@ body {
     
 }
 #discription {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 10px;
     max-width: 500px;
     display: block;
     margin: 20px 20px 20px 320px;
-    
+    padding: 10px;
 }
 footer {
     margin-right: 25px;
@@ -83,17 +93,19 @@ footer {
     margin: 0 0 0 10px;
 }
 .secondcontainer {
-    display: block;
-    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
     margin: 0 auto;
-    background-color: antiquewhite;
+    background-color: #000e1b;
     width: 380px;
     border-radius: 30px;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    top: 68px;
-    left: 275px;
+    top: -570px;
+    left: -320px;
     font-size: 33px;
 }
 #current-temperature, #current-city {
