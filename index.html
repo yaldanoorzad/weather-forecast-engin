@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -16,64 +17,37 @@
             <input type="text" placeholder="What City?" required class="weather-forecast-search-place">
             <input type="submit" value="search" class="weather-forecast-search-btn">
         </form>
-        <div id="discription">
+        <div id="further-info">
             <div class="country"><span>COUNTRY</span><span id="country">Afghanistan</span></div>
-            <div class="humidity"><span>HUMIDITY</span><span id="country">13%</span></div>
+            <div class="humidity"><span>HUMIDITY</span><span id="humidity">13%</span></div>
             <div class="wind"><span>WIND SPEED</span><span id="wind">5 km/hr</span></div>
             <div class="feels"><span>FEELS LIKE</span><span id="feels">23°C</span></div>
             <div class="coordinates"><span>COORDINATES</span><span id="coordinates">34.3529° N, 62.2040° E</span></div>
         </div>
         
         
-        <div class="weather-forecast">
-            <div class="weather-forecast-day">
-                <div class="weather-forecast-date">Sun</div>
-                <div class="weather-forecast-icon">⛅</div>
-                <div class="weather-forecast-temperatures"><strong class="weather-forecast-temperature">24°C</strong><span class="weather-current-temperature">10°C</span></div>
-            </div>
-
-            <div class="weather-forecast-day">
-                <div class="weather-forecast-date">Sun</div>
-                <div class="weather-forecast-icon">⛅</div>
-                <div class="weather-forecast-temperatures"><strong class="weather-forecast-temperature">24°C</strong><span class="weather-current-temperature">10°C</span></div>
-            </div>
-
-            <div class="weather-forecast-day">
-                <div class="weather-forecast-date">Sun</div>
-                <div class="weather-forecast-icon">⛅</div>
-                <div class="weather-forecast-temperatures"><strong class="weather-forecast-temperature">24°C</strong><span class="weather-current-temperature">10°C</span></div>
-            </div>
-
-            <div class="weather-forecast-day">
-                <div class="weather-forecast-date">Sun</div>
-                <div class="weather-forecast-icon">⛅</div>
-                <div class="weather-forecast-temperatures"><strong class="weather-forecast-temperature">24°C</strong><span class="weather-current-temperature">10°C</span></div>
-            </div>
-
-            <div class="weather-forecast-day">
-                <div class="weather-forecast-date">Sun</div>
-                <div class="weather-forecast-icon">⛅</div>
-                <div class="weather-forecast-temperatures"><strong class="weather-forecast-temperature">24°C</strong><span class="weather-current-temperature">10°C</span></div>
-            </div>
+        <div class="weather-forecast" id="forecast">
+            
         </div>
         <br>
         <footer>Coded by <a href="https://www.shecodes.io/graduates/141695-yalda-noorzad" target="_blank">Yalda Noorzad</a> 
-            hosted on <a href="#" target="_blank">Github</a> 
-            and website hosted on <a href="#" target="_blank">Netlify</a></footer>
+            hosted on <a href="https://github.com/yaldanoorzad/weather-forecast-engin" target="_blank">Github</a> 
+            and website hosted on <a href="https://weather-forecast-engin.netlify.app/" target="_blank">Netlify</a></footer>
             
     </div>
     <div class="secondcontainer">
         <div id="current-day">Thursday</div>
-        <div id="current-day">5 September 2024</div>
+        <div id="current-date">5 September 2024</div>
         <br>
         <div id="current-city"><span class="material-symbols-outlined">
             location_on
-            </span>Herat</div>
+            </span><span id="current-city-name">Herat</span></div>
         <br>
         <div id="current-weather-emoji"><img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png" alt=""></div>
         <br>
         <div id="current-temperature">24°C</div>
         <div id="current-weather-discription">clear sky</div>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>

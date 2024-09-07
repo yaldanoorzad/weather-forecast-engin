@@ -53,13 +53,13 @@ body {
 .weather-forecast-temperature {
     padding: 0 10px;
 }
-#discription .country, .humidity, .wind, .coordinates, .feels {
+#further-info .country, .humidity, .wind, .coordinates, .feels {
     display: flex;
     justify-content: space-between;
     padding: 0.4rem 0;
     
 }
-#discription {
+#further-info {
     background-color: rgba(0,0,0,0.2);
     border-radius: 10px;
     max-width: 500px;
