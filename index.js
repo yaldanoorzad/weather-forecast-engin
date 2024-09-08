@@ -5,8 +5,8 @@ function showcity(event) {
     currencity.innerHTML = cityinput.value;
 
     let city = cityinput.value;
-    let apieky = "f4850684o25d3207eb4aa74t2073f600";
-    let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apieky}}&units=metric`;
+    let apiKey = "f4850684o25d3207eb4aa74t2073f600";
+    let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(url).then(showtemperature);
 }
 let searchbt = document.querySelector(".weather-forecast-search");
@@ -37,49 +37,44 @@ function showtemperature(response) {
 
     let appicon = document.querySelector("#current-weather-emoji")
     appicon.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`
-
-
-    getforecast(response.data.city);
 }
 
 
-    let now = new Date();
-    let currentyear = now.getFullYear();
-    let currentdate = now.getDate();
+let now = new Date();
+let currentyear = now.getFullYear();
+let currentdate = now.getDate();
 
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    let currentmonth = months[now.getMonth()];
+let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+let currentmonth = months[now.getMonth()];
 
-    let days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let currentday = days[now.getDate()];
-    let weekday = document.querySelector("#current-day");
-    weekday.innerHTML = currentday;
+let days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+let currentday = days[now.getDate()];
+let weekday = document.querySelector("#current-day");
+weekday.innerHTML = currentday;
 
-    let date = document.querySelector("#current-date");
-    date.innerHTML = `${currentdate} ${currentmonth} ${currentyear}`;
+let date = document.querySelector("#current-date");
+date.innerHTML = `${currentdate} ${currentmonth} ${currentyear}`;
 
 
-function getforecast(city) {
-    let apieky = "f4850684o25d3207eb4aa74t2073f600";
-    let url = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apieky}}&units=metric`;
-    axios.get(url).then(showforecast);
+function getforecast(city){
+    let apikey = `f4850684o25d3207eb4aa74t2073f600`;
+    let apiurl = `https://api.shecodes.io/weather/v1/forecasr?query=${city}&key=${apikey}&units=metric`;
+    axios.get(apiurl).then(showforecast);
 }
-  
-function showforecast(response) {
-    console.log(response.data);
-    
 
-    let forecastdays = ["Sun", "Mon", "Tue", "Wed", "Thu"];
-    forecastHtml = "";
-    forecastdays.forEach(function(day){
-
-        forecastHtml = forecastHtml +
-        `<div class="weather-forecast-day">
-            <div class="weather-forecast-date">${day}</div>
-            <div class="weather-forecast-icon">⛅</div>
-            <div class="weather-forecast-temperatures"><strong class="weather-forecast-temperature">24°C</strong><span class="weather-current-temperature">10°C</span></div>
-        </div>`;
+function showforecast(response){
+    let forecastHTML = "";
+    response.data.daily.foreach(function(day, index){
+        if (index < 5) {
+            forecastHTML = forecastHTML + 
+            `<div class="weather-forecast-day">
+                <div class="weather-forecast-date">${day}</div>
+                <div class="weather-forecast-icon">⛅</div>
+                <div class="weather-forecast-temperatures"><strong class="weather-forecast-temperature">${Math.round(day.temperature.maximum)}°</strong>
+                <span class="weather-current-temperature">${Math.round(day.temperature.minimum)}°</span></div>
+            </div>`;
+        }
     });
     let forecastElement = document.querySelector("#forecast");
-    forecastElement.innerHTML=forecastHtml;
+    forecastElement.innerHTML = forecastHTML;
 }
