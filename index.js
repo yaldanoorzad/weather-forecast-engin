@@ -47,7 +47,24 @@ function showcity(event) {
     getforecast(response.data.city);
   }
   
+  
   let now = new Date();
+  
+  
+  let days = [
+    "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+  let currentday = document.querySelector("#current-time");
+  currentday.innerHTML = day;
+  
   let currentyear = now.getFullYear();
   let currentdate = now.getDate();
   
@@ -66,23 +83,9 @@ function showcity(event) {
     "December",
   ];
   let currentmonth = months[now.getMonth()];
-  
-  let days = [
-    "Saturday",
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let currentday = days[now.getDate()];
-  let weekday = document.querySelector("#current-day");
-  weekday.innerHTML = currentday;
-  
   let date = document.querySelector("#current-date");
   date.innerHTML = `${currentdate} ${currentmonth} ${currentyear}`;
+  
   
 
   function formatday(timestamp){
