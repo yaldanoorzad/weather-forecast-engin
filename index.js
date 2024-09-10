@@ -52,7 +52,6 @@ function showcity(event) {
   
   
   let days = [
-    "Saturday",
     "Sunday",
     "Monday",
     "Tuesday",
